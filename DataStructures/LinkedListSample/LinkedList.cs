@@ -20,12 +20,12 @@ namespace LinkedListSample
          * [x] Insert(int position, object data):void - Inserts the given object at the respective position.
          * [x] Add(object data):void - Adds the object to the end of the list.
          * [x] AddFirst(object data):void - Inserts the oobject to the beginining of the list.
-         * [] Remove(int position):Node - Removes the object from the specified position.
+         * [x] Remove(int position):Node - Removes the object from the specified position.
          * [] IndexOf(object data):int - Retrieves the position of the data from the list.
          * [] Get(int position):object - Fetches the data from the specified position in the list.
          * [] Contains(object data):bool - Returns whther the object is present in the list.
          */
-                 
+
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkedList"/> class.
         /// </summary>
@@ -120,6 +120,42 @@ namespace LinkedListSample
         public void AddFirst(object data)
         {
             this.Insert(0, data);
+        }
+
+
+        /// <summary>
+        /// Removes the node from the specified position.
+        /// </summary>
+        /// <param name="position">The position.</param>
+        public void Remove(int position)
+        {
+            if (position < 0 || position >= this.Count)
+            {
+                throw new ArgumentOutOfRangeException(nameof(position));
+            }
+
+            if (position == 0)
+            {
+                this.Head = this.Head.Next;
+            }
+            else
+            {
+                Node currentNode = null;
+                var next = this.Head;
+
+                // Iterate the nodes till one level before the position and get that node. Set next of the selected node to next.next.
+                for (int i = 0; i < position; i++)
+                {
+                    currentNode = next;
+                    next = currentNode.Next;
+                }
+
+                currentNode.Next = next.Next;
+            }
+            
+
+            // Decrement the count.
+            this.Count--;
         }
 
     }

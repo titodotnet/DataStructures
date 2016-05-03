@@ -12,12 +12,20 @@ namespace LinkedListSample
         {
             var linkedList = new LinkedList();
 
+            linkedList.Insert(0, "test first5");
             linkedList.Add("test1");
             linkedList.Add("test2");
             linkedList.Insert(1,"test3");
             linkedList.AddFirst("test4");
+            
+            linkedList.PrintToConsole();
+
+            Console.WriteLine("After deletion...........");
+            linkedList.Remove(0);
+            linkedList.Remove(2);
 
             linkedList.PrintToConsole();
+
             Console.ReadKey();
         }
     }
