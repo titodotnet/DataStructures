@@ -26,6 +26,10 @@ namespace LinkedListSample
 
             linkedList.PrintToConsole();
 
+            Console.WriteLine(Environment.NewLine);
+            Console.WriteLine($"Index of 'test2' {linkedList.IndexOf("test2")}");
+            Console.WriteLine($"Does list contains 'test4' {linkedList.Contains("test4")}");
+
             Console.ReadKey();
         }
     }

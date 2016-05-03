@@ -21,9 +21,10 @@ namespace LinkedListSample
          * [x] Add(object data):void - Adds the object to the end of the list.
          * [x] AddFirst(object data):void - Inserts the oobject to the beginining of the list.
          * [x] Remove(int position):Node - Removes the object from the specified position.
-         * [] IndexOf(object data):int - Retrieves the position of the data from the list.
+         * [x] IndexOf(object data):int - Retrieves the position of the data from the list.
+         * [x] Contains(object data):bool - Returns whther the object is present in the list.
          * [] Get(int position):object - Fetches the data from the specified position in the list.
-         * [] Contains(object data):bool - Returns whther the object is present in the list.
+         * 
          */
 
         /// <summary>
@@ -153,9 +154,41 @@ namespace LinkedListSample
                 currentNode.Next = next.Next;
             }
             
-
             // Decrement the count.
             this.Count--;
+        }
+        /// <summary>
+        /// Indexes the of.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <returns>The index of the data.</returns>
+        public int IndexOf(object data)
+        {
+            int counter = -1;
+            var currentNode = this.Head;
+
+            while (currentNode != null)
+            {
+                ++counter;
+                if (currentNode.Data.ToString().Equals(data.ToString()))
+                {
+                    return counter;
+                }
+
+                currentNode = currentNode.Next;
+            }
+
+            return -1;
+        }
+
+        /// <summary>
+        /// Determines whether the linked list [contains] [the specified data].
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <returns>Whether the data exists in the linked list.</returns>
+        public bool Contains(object data)
+        {
+            return this.IndexOf(data) > -1;
         }
 
     }
