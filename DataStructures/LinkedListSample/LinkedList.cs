@@ -139,8 +139,7 @@ namespace LinkedListSample
         {
             this.Insert(0, data);
         }
-
-
+        
         /// <summary>
         /// Removes the node from the specified position.
         /// </summary>
@@ -174,6 +173,7 @@ namespace LinkedListSample
             // Decrement the count.
             this.Count--;
         }
+
         /// <summary>
         /// Indexes the of.
         /// </summary>
