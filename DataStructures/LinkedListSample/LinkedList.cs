@@ -15,6 +15,7 @@ namespace LinkedListSample
          * [x] Head : Node - Holds the reference to the first node in the list.
          * [x] Count : int - Holds the count / size of the items in the list .
          * [x] Empty : bool - Whether the list is empty.
+         * [x] Indexer:Object - Returns the data from the specified position in the list.
          * 
          * Methods:
          * [x] Insert(int position, object data):void - Inserts the given object at the respective position.
@@ -23,7 +24,7 @@ namespace LinkedListSample
          * [x] Remove(int position):Node - Removes the object from the specified position.
          * [x] IndexOf(object data):int - Retrieves the position of the data from the list.
          * [x] Contains(object data):bool - Returns whther the object is present in the list.
-         * [] Get(int position):object - Fetches the data from the specified position in the list.
+         * [x] Get(int position):object - Fetches the data from the specified position in the list.
          * 
          */
 

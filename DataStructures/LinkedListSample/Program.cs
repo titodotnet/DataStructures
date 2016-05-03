@@ -20,6 +20,7 @@ namespace LinkedListSample
             
             linkedList.PrintToConsole();
 
+            Console.WriteLine(Environment.NewLine);
             Console.WriteLine("After deletion...........");
             linkedList.Remove(0);
             linkedList.Remove(2);
@@ -27,6 +28,7 @@ namespace LinkedListSample
             linkedList.PrintToConsole();
 
             Console.WriteLine(Environment.NewLine);
+            Console.WriteLine("IndexOf and Contains section...........");
             Console.WriteLine($"Index of 'test2' {linkedList.IndexOf("test2")}");
             Console.WriteLine($"Does list contains 'test4' {linkedList.Contains("test4")}");
 
