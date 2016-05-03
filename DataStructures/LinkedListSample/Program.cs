@@ -16,6 +16,9 @@ namespace LinkedListSample
             linkedList.Add("test2");
             linkedList.Insert(1,"test3");
             linkedList.AddFirst("test4");
+
+            linkedList.PrintToConsole();
+            Console.ReadKey();
         }
     }
 }
