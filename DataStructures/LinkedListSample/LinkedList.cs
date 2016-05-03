@@ -61,6 +61,22 @@ namespace LinkedListSample
         public bool IsEmpty { get { return this.Count == 0; } }
 
         /// <summary>
+        /// Gets the <see cref="System.Object"/> with the specified position.
+        /// </summary>
+        /// <value>
+        /// The <see cref="System.Object"/>.
+        /// </value>
+        /// <param name="position">The position.</param>
+        /// <returns></returns>
+        public object this[int position]
+        {
+            get
+            {
+                return this.GetData(position);
+            }
+        }
+
+        /// <summary>
         /// Inserts the data in the specified position. Zero based index.
         /// </summary>
         /// <param name="position">The position.</param>
@@ -153,7 +169,7 @@ namespace LinkedListSample
 
                 currentNode.Next = next.Next;
             }
-            
+
             // Decrement the count.
             this.Count--;
         }
@@ -189,6 +205,29 @@ namespace LinkedListSample
         public bool Contains(object data)
         {
             return this.IndexOf(data) > -1;
+        }
+
+        /// <summary>
+        /// Gets the data from the linked list.
+        /// </summary>
+        /// <param name="position">The position.</param>
+        /// <returns>The data from the respective position.</returns>
+        public object GetData(int position)
+        {
+            if (position < 0 || position >= this.Count)
+            {
+                throw new ArgumentOutOfRangeException(nameof(position));
+            }
+
+            Node currentNode = null;
+            Node next = this.Head;
+            for (int i = 0; i <= position; i++)
+            {
+                currentNode = next;
+                next = currentNode.Next;
+            }
+
+            return currentNode.Data;
         }
 
     }
